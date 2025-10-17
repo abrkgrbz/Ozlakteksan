@@ -1,0 +1,398 @@
+/* ================================
+   HOME PAGE VISUAL IMAGES & ILLUSTRATIONS
+   Hero Illustration & Feature Visuals
+   ================================ */
+
+/* Hero Image Container */
+.hero-image-container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Hero Visual - Main Illustration */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  margin-bottom: 30px;
+}
+
+.hero-visual-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Decorative Shapes */
+.visual-shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatShape 20s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 77, 113, 0.2) 0%, transparent 70%);
+  bottom: 15%;
+  left: 5%;
+  animation-delay: 5s;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+  top: 40%;
+  left: 15%;
+  animation-delay: 10s;
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -20px) scale(1.1); }
+  66% { transform: translate(-15px, 15px) scale(0.9); }
+}
+
+/* Main Illustration */
+.hero-illustration {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.3),
+      0 0 0 0 rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.4),
+      0 0 0 15px rgba(249, 115, 22, 0);
+  }
+}
+
+.illustration-icon {
+  font-size: 120px;
+  color: rgba(249, 115, 22, 0.8);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Floating Badges */
+.illustration-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+.illustration-badge i {
+  font-size: 18px;
+  color: #f97316;
+}
+
+.illustration-badge span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+.badge-1 {
+  top: 10%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+.badge-2 {
+  bottom: 20%;
+  left: -15%;
+  animation-delay: 1s;
+}
+
+.badge-3 {
+  top: 50%;
+  right: -15%;
+  animation-delay: 2s;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Hero Info Cards */
+.hero-info-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(249, 115, 22, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.info-card-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.info-card-content h6 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.info-card-content span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Feature Visual Enhancements */
+.feature-visual {
+  position: relative;
+  margin-bottom: 24px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.feature-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(249, 115, 22, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .feature-pattern {
+  opacity: 1;
+}
+
+.feature-visual .icon-circle {
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .hero-illustration {
+    width: 280px;
+    height: 280px;
+  }
+
+  .illustration-icon {
+    font-size: 100px;
+  }
+
+  .illustration-badge {
+    padding: 10px 12px;
+  }
+
+  .illustration-badge i {
+    font-size: 16px;
+  }
+
+  .illustration-badge span {
+    font-size: 11px;
+  }
+
+  .badge-1,
+  .badge-2,
+  .badge-3 {
+    right: auto;
+    left: auto;
+  }
+
+  .badge-1 {
+    top: 5%;
+    right: 5%;
+  }
+
+  .badge-2 {
+    bottom: 15%;
+    left: 5%;
+  }
+
+  .badge-3 {
+    top: 45%;
+    right: 5%;
+  }
+
+  .hero-info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-visual {
+    min-height: 300px;
+    margin-bottom: 24px;
+  }
+
+  .hero-illustration {
+    width: 240px;
+    height: 240px;
+  }
+
+  .illustration-icon {
+    font-size: 80px;
+  }
+
+  .illustration-badge {
+    padding: 8px 12px;
+  }
+
+  .illustration-badge span {
+    font-size: 10px;
+  }
+
+  .badge-1 {
+    top: 0;
+    right: 0;
+  }
+
+  .badge-2 {
+    bottom: 10%;
+    left: 0;
+  }
+
+  .badge-3 {
+    top: 50%;
+    right: 0;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+
+  .info-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .info-card-content h6 {
+    font-size: 18px;
+  }
+
+  .feature-visual {
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .feature-visual .icon-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-image-container {
+    margin-top: 40px;
+  }
+
+  .hero-visual {
+    min-height: 280px;
+  }
+
+  .hero-illustration {
+    width: 220px;
+    height: 220px;
+  }
+
+  .illustration-icon {
+    font-size: 70px;
+  }
+
+  .visual-shape {
+    display: none;
+  }
+
+  .illustration-badge {
+    padding: 6px 10px;
+  }
+
+  .illustration-badge i {
+    font-size: 14px;
+  }
+
+  .illustration-badge span {
+    font-size: 9px;
+  }
+}

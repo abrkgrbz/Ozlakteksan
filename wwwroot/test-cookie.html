@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çerez Bildirimi Test</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/cookie-consent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        .status-ok { background: #d4edda; color: #155724; }
+        .status-error { background: #f8d7da; color: #721c24; }
+        .log {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Çerez Bildirimi Test Sayfası</h1>
+
+    <div class="test-section">
+        <h2>Test Kontrolleri</h2>
+
+        <p>
+            <strong>CookieConsent Nesnesi:</strong>
+            <span id="consent-object" class="status status-error">Yüklenmedi</span>
+        </p>
+
+        <p>
+            <strong>Mevcut Çerez Durumu:</strong>
+            <span id="cookie-status" class="status status-error">Kontrol edilmedi</span>
+        </p>
+
+        <p>
+            <strong>Banner Durumu:</strong>
+            <span id="banner-status" class="status status-error">Görünmüyor</span>
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Manuel Kontroller</h2>
+
+        <button onclick="clearCookie()" class="btn btn-warning">
+            Çerezi Temizle (Yeni Kullanıcı Simüle Et)
+        </button>
+
+        <button onclick="showBannerManual()" class="btn btn-primary">
+            Banner'ı Manuel Göster
+        </button>
+
+        <button onclick="checkConsent()" class="btn btn-info">
+            Çerez Durumunu Kontrol Et
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>Konsol Logu</h2>
+        <div id="log" class="log"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/site.js"></script>
+    <script src="/js/toast.js"></script>
+    <script src="/js/i18n.js"></script>
+    <script src="/js/cookie-consent.js"></script>
+
+    <script>
+        // Logging helper
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const time = new Date().toLocaleTimeString();
+            const color = type === 'error' ? 'red' : type === 'success' ? 'green' : 'black';
+            logDiv.innerHTML += `<div style="color: ${color}">[${time}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(`[${type}] ${message}`);
+        }
+
+        // Check if CookieConsent loaded
+        window.addEventListener('load', function() {
+            log('Sayfa yüklendi, kontroller başlatılıyor...');
+
+            // Check if CookieConsent object exists
+            if (window.CookieConsent) {
+                document.getElementById('consent-object').className = 'status status-ok';
+                document.getElementById('consent-object').textContent = 'Yüklendi';
+                log('CookieConsent nesnesi başarıyla yüklendi', 'success');
+
+                // Check current consent
+                checkConsent();
+
+                // Check if banner exists
+                setTimeout(() => {
+                    const banner = document.getElementById('cookie-consent-banner');
+                    if (banner) {
+                        document.getElementById('banner-status').className = 'status status-ok';
+                        document.getElementById('banner-status').textContent = banner.classList.contains('show') ? 'Görünüyor' : 'Gizli';
+                        log('Banner elementi bulundu: ' + (banner.classList.contains('show') ? 'Görünüyor' : 'Gizli'), 'success');
+                    } else {
+                        log('Banner elementi bulunamadı!', 'error');
+                    }
+                }, 500);
+
+            } else {
+                log('CookieConsent nesnesi yüklenemedi!', 'error');
+            }
+        });
+
+        function clearCookie() {
+            // Clear the consent cookie
+            document.cookie = 'ozlasteksan_cookie_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            log('Çerez temizlendi', 'success');
+
+            // Reload to trigger banner
+            setTimeout(() => {
+                log('Sayfa yenileniyor...');
+                location.reload();
+            }, 1000);
+        }
+
+        function showBannerManual() {
+            if (window.CookieConsent && window.CookieConsent.showBanner) {
+                // Remove existing banner first
+                const existingBanner = document.getElementById('cookie-consent-banner');
+                if (existingBanner) {
+                    existingBanner.remove();
+                    log('Mevcut banner kaldırıldı');
+                }
+
+                // Show new banner
+                window.CookieConsent.showBanner();
+                log('Banner manuel olarak gösterildi', 'success');
+
+                // Update status
+                setTimeout(() => {
+                    const banner = document.getElementById('cookie-consent-banner');
+                    if (banner && banner.classList.contains('show')) {
+                        document.getElementById('banner-status').className = 'status status-ok';
+                        document.getElementById('banner-status').textContent = 'Görünüyor';
+                    }
+                }, 500);
+            } else {
+                log('CookieConsent.showBanner fonksiyonu bulunamadı!', 'error');
+            }
+        }
+
+        function checkConsent() {
+            if (window.CookieConsent && window.CookieConsent.getConsent) {
+                const consent = window.CookieConsent.getConsent();
+                if (consent) {
+                    document.getElementById('cookie-status').className = 'status status-ok';
+                    document.getElementById('cookie-status').textContent = 'Ayarlanmış';
+                    log('Çerez durumu: ' + JSON.stringify(consent), 'success');
+                } else {
+                    document.getElementById('cookie-status').className = 'status status-error';
+                    document.getElementById('cookie-status').textContent = 'Ayarlanmamış';
+                    log('Çerez ayarlanmamış (ilk ziyaret)', 'info');
+                }
+            } else {
+                log('CookieConsent.getConsent fonksiyonu bulunamadı!', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

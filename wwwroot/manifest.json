@@ -1,0 +1,116 @@
+{
+  "name": "Özlasteksan Kauçuk - Endüstriyel Çözümler",
+  "short_name": "Özlasteksan",
+  "description": "30 yıllık tecrübe ile endüstriyel kauçuk ve sızdırmazlık çözümleri",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f2a44",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "tr-TR",
+  "dir": "ltr",
+  "categories": ["business", "industrial", "manufacturing"],
+  "icons": [
+    {
+      "src": "/images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ürünler",
+      "short_name": "Ürünler",
+      "description": "Ürün kataloğumuzu görüntüleyin",
+      "url": "/Products",
+      "icons": [
+        {
+          "src": "/images/icons/products-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Teklif Al",
+      "short_name": "Teklif",
+      "description": "Hızlı teklif formu",
+      "url": "/Home/Quote",
+      "icons": [
+        {
+          "src": "/images/icons/quote-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "İletişim",
+      "short_name": "İletişim",
+      "description": "Bizimle iletişime geçin",
+      "url": "/Home/Contact",
+      "icons": [
+        {
+          "src": "/images/icons/contact-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/home.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Ana Sayfa"
+    },
+    {
+      "src": "/images/screenshots/products.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Ürünler"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+@model OzlasteksanWeb.Models.ContactForm
+@{
+    ViewData["Title"] = "İletişim";
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="page-hero">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold">Uzman ekibimizle hemen iletişime geçin</h1>
+                    <p class="lead mb-0">
+                        Teknik talepleriniz, siparişleriniz ve projeleriniz için bize ulaşın. 24 saat içinde geri dönüş garantisi veriyoruz.
+                    </p>
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <div class="surface surface-accent">
+                        <span class="tag tag-accent">İletişim bilgileri</span>
+                        <ul class="list-unstyled contact-details mt-4 mb-0">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefon</strong><br />
+                                    0212 243 46 08 (Pazartesi - Cuma, 08:00 - 18:00)
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>E-posta</strong><br />
+                                    <a href="mailto:info@ozlasteksan.com" class="text-white">info@ozlasteksan.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-location-dot"></i>
+                                <div>
+                                    <strong>Adres</strong><br />
+                                    İstanbul, Türkiye
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show surface mb-4" role="alert">
+                <i class="fas fa-check-circle me-2"></i>
+                @TempData["Message"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="contact-card">
+                    <div class="card-body">
+                        <span class="tag">Bize yazın</span>
+                        <h3 class="fw-semibold mt-3 mb-4">İhtiyacınızı bize aktarın, sizi arayalım.</h3>
+                        <form method="post" asp-action="Contact">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input asp-for="Name" class="form-control" placeholder="Adınız Soyadınız" />
+                                        <label asp-for="Name"></label>
+                                    </div>
+                                    <span asp-validation-for="Name" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input asp-for="Company" class="form-control" placeholder="Şirket Adı (Opsiyonel)" />
+                                        <label asp-for="Company"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input asp-for="Email" class="form-control" placeholder="E-posta adresiniz" />
+                                        <label asp-for="Email"></label>
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input asp-for="Phone" class="form-control" placeholder="Telefon numarası" />
+                                        <label asp-for="Phone"></label>
+                                    </div>
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input asp-for="Subject" class="form-control" placeholder="Konu" />
+                                        <label asp-for="Subject"></label>
+                                    </div>
+                                    <span asp-validation-for="Subject" class="text-danger small"></span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea asp-for="Message" class="form-control" style="height: 150px;" placeholder="Mesajınız"></textarea>
+                                        <label asp-for="Message"></label>
+                                    </div>
+                                    <span asp-validation-for="Message" class="text-danger small"></span>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-accent w-100">
+                                        <i class="fas fa-paper-plane"></i> Mesajı Gönder
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="surface h-100 d-flex flex-column gap-4">
+                    <div>
+                        <span class="tag tag-accent">Neden biz?</span>
+                        <h4 class="mt-3 mb-3">İş ortaklarımız bizi tercih ediyor çünkü</h4>
+                        <ul class="list-unstyled mb-0 text-soft">
+                            <li class="d-flex gap-3 mb-3">
+                                <i class="fas fa-stopwatch text-accent mt-1"></i>
+                                <div>
+                                    <strong>48 saatte teklif</strong><br />
+                                    Teknik ekibimiz taleplerinizi en hızlı şekilde değerlendirir.
+                                </div>
+                            </li>
+                            <li class="d-flex gap-3 mb-3">
+                                <i class="fas fa-certificate text-accent mt-1"></i>
+                                <div>
+                                    <strong>ISO 9001 süreçleri</strong><br />
+                                    Üretimde her parti için izlenebilir kalite kontrol.
+                                </div>
+                            </li>
+                            <li class="d-flex gap-3">
+                                <i class="fas fa-headset text-accent mt-1"></i>
+                                <div>
+                                    <strong>Uzman destek</strong><br />
+                                    Ürün seçiminden lojistiğe kadar uçtan uca danışmanlık.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="quote-highlight mt-auto">
+                        <h6 class="fw-semibold mb-2">Acil destek mi lazım?</h6>
+                        <p class="text-soft mb-3">Teknik ekibimizle canlı olarak görüşmek için bizi arayın.</p>
+                        <a href="tel:+902122434608" class="btn btn-light w-100">
+                            <i class="fas fa-phone"></i> 0212 243 46 08
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

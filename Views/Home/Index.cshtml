@@ -1,0 +1,382 @@
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-card">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <span class="hero-badge">
+                            <i class="fas fa-award"></i>
+                            30+ Yıllık Endüstriyel Deneyim
+                        </span>
+                        <h1 class="hero-title">
+                            Kauçuk çözümlerini sade, güvenilir ve ölçülebilir kılıyoruz
+                        </h1>
+                        <p class="hero-lead">
+                            Sızdırmazlık, titreşim ve özel üretim parçaları tek çatı altında üretiyor; çizimden teslimata uzanan süreci şeffaf şekilde yönetiyoruz.
+                        </p>
+                        <div class="hero-cta">
+                            <a asp-controller="Products" asp-action="Index" class="btn btn-light">
+                                <i class="fas fa-boxes-stacked"></i> Ürün Portföyünü Keşfet
+                            </a>
+                            <a asp-controller="Home" asp-action="Quote" class="btn btn-outline-light">
+                                <i class="fas fa-file-signature"></i> Projene Özel Teklif Al
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <strong>1000+</strong>
+                                <span>Mutlu müşteri</span>
+                            </div>
+                            <div class="hero-stat">
+                                <strong>500+</strong>
+                                <span>Ürün tipi</span>
+                            </div>
+                            <div class="hero-stat">
+                                <strong>48 sa.</strong>
+                                <span>Teklif süresi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-image-container">
+                        <!-- Hero Visual -->
+                        <div class="hero-visual">
+                            <div class="hero-visual-inner">
+                                <!-- Decorative shapes -->
+                                <div class="visual-shape shape-1"></div>
+                                <div class="visual-shape shape-2"></div>
+                                <div class="visual-shape shape-3"></div>
+
+                                <!-- Main illustration placeholder -->
+                                <div class="hero-illustration">
+                                    <div class="illustration-icon">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="illustration-badge badge-1">
+                                        <i class="fas fa-cog"></i>
+                                        <span>Özel Üretim</span>
+                                    </div>
+                                    <div class="illustration-badge badge-2">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Kalite</span>
+                                    </div>
+                                    <div class="illustration-badge badge-3">
+                                        <i class="fas fa-clock"></i>
+                                        <span>48 Saat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Cards -->
+                        <div class="hero-info-cards">
+                            <div class="info-card">
+                                <div class="info-card-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="info-card-content">
+                                    <h6>ISO 9001</h6>
+                                    <span>Sertifikalı</span>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="info-card-content">
+                                    <h6>1000+</h6>
+                                    <span>Mutlu Müşteri</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-heading fade-up">
+            <span class="tag">Öne çıkan hizmetler</span>
+            <h2>Her sektör için ölçeklenebilir kauçuk çözümler</h2>
+            <p>
+                Otomotivden savunma sanayine kadar geniş üretim deneyimimiz ile taleplerinizi duyarlı mühendislik ile
+                karşılıyoruz. Ar-Ge, prototipleme ve seri üretim süreçlerini aynı çatı altında yönetiyoruz.
+            </p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card fade-up">
+                <div class="feature-visual">
+                    <div class="feature-pattern"></div>
+                    <span class="icon-circle">
+                        <i class="fas fa-cubes"></i>
+                    </span>
+                </div>
+                <h5>Özel Üretim</h5>
+                <p>Teknik çizimleriniz doğrultusunda, malzeme seçimi ve kalıp tasarımı dahil uçtan uca üretim hizmeti.</p>
+                <a asp-controller="Home" asp-action="Quote" class="learn-more">
+                    Detayları keşfet <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-visual">
+                    <div class="feature-pattern"></div>
+                    <span class="icon-circle">
+                        <i class="fas fa-shield-halved"></i>
+                    </span>
+                </div>
+                <h5>Sızdırmazlık Sistemleri</h5>
+                <p>Yüksek basınç ve sıcaklığa dayanıklı conta çözümleri ile üretim hattınızın güvenliğini artırın.</p>
+                <a asp-controller="Products" asp-action="Index" class="learn-more">
+                    Ürünleri gör <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-visual">
+                    <div class="feature-pattern"></div>
+                    <span class="icon-circle">
+                        <i class="fas fa-industry"></i>
+                    </span>
+                </div>
+                <h5>Hızlı Prototipleme</h5>
+                <p>İhtiyaç duyduğunuz parçaların örnek üretimini kısa sürelerde tamamlıyor, kalite testleri sunuyoruz.</p>
+                <a asp-controller="Home" asp-action="Contact" class="learn-more">
+                    Randevu oluştur <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="feature-card fade-up">
+                <div class="feature-visual">
+                    <div class="feature-pattern"></div>
+                    <span class="icon-circle">
+                        <i class="fas fa-recycle"></i>
+                    </span>
+                </div>
+                <h5>Uzun Ömürlü Malzemeler</h5>
+                <p>NR, NBR, EPDM, silikon ve poliüretan gibi farklı elastomer seçenekleri ile uzun ömürlü çözümler.</p>
+                <a asp-controller="Products" asp-action="Index" class="learn-more">
+                    Malzemeleri incele <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Indicators & Gallery Section -->
+<section class="trust-gallery-section">
+    <div class="container">
+        <div class="section-heading text-center fade-up">
+            <span class="tag">Referanslarımız & Sertifikalar</span>
+            <h2>Güvenilir İş Ortağınız</h2>
+            <p>Türkiye'nin önde gelen firmalarına hizmet veriyor, uluslararası standartlarda üretim yapıyoruz</p>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges fade-up">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="trust-badge-content">
+                    <h6>ISO 9001:2015</h6>
+                    <span>Kalite Yönetim Sistemi</span>
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="trust-badge-content">
+                    <h6>30+ Yıl</h6>
+                    <span>Sektör Tecrübesi</span>
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="trust-badge-content">
+                    <h6>1000+</h6>
+                    <span>Mutlu Müşteri</span>
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="trust-badge-content">
+                    <h6>15+ Ülke</h6>
+                    <span>İhracat Deneyimi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Gallery Grid -->
+        <div class="image-gallery fade-up">
+            <div class="gallery-item gallery-item-large">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-industry"></i>
+                    <span>Üretim Tesisi</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-microscope"></i>
+                    <span>Kalite Kontrol</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-flask"></i>
+                    <span>Laboratuvar</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-cogs"></i>
+                    <span>İmalat Hattı</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-box"></i>
+                    <span>Ürün Çeşitliliği</span>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-wide">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-warehouse"></i>
+                    <span>Depo & Lojistik</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading fade-up">
+            <span class="tag tag-accent">Ürün portföyü</span>
+            <h2>İhtiyacınıza uygun ürün grupları</h2>
+            <p>
+                Standart ölçülerden özel tasarım parçalarına kadar zengin ürün gamımız ile üretim süreçlerinizi destekliyoruz.
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-3">
+                <div class="category-card fade-up">
+                    <span class="chip">
+                        <i class="fas fa-circle-notch me-2"></i>
+                        Conta Çözümleri
+                    </span>
+                    <h5>Flanş & O-Ring Contalar</h5>
+                    <p>Basınca dayanıklı, uzun ömürlü sızdırmazlık çözümleri. EPDM, NBR, Viton seçenekleriyle hazır.</p>
+                    <a asp-controller="Products" asp-action="Index" class="learn-more">
+                        Kategoriyi incele <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="category-card fade-up">
+                    <span class="chip">
+                        <i class="fas fa-layer-group me-2"></i>
+                        Levhalar
+                    </span>
+                    <h5>Kauçuk Levha & Plakalar</h5>
+                    <p>Farklı kalınlık ve sertlik seçenekleri, istenilen ölçülerde kesim ve laminasyon hizmeti.</p>
+                    <a asp-controller="Products" asp-action="Index" class="learn-more">
+                        Ürünleri gör <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="category-card fade-up">
+                    <span class="chip">
+                        <i class="fas fa-screwdriver-wrench me-2"></i>
+                        Kaplin Grupları
+                    </span>
+                    <h5>Kaplin Lastikleri</h5>
+                    <p>Yıldız, fışkı ve papatya tip kaplin lastikleri ile titreşim ve darbe yüklerini absorbe edin.</p>
+                    <a asp-controller="Products" asp-action="Index" class="learn-more">
+                        Seçenekler <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="category-card fade-up">
+                    <span class="chip">
+                        <i class="fas fa-bolt me-2"></i>
+                        Özel Parçalar
+                    </span>
+                    <h5>Proje Bazlı Üretim</h5>
+                    <p>Kalıp tasarımı, malzeme testi ve seri üretim dahil uçtan uca çözümler ile projelerinizi hızlandırın.</p>
+                    <a asp-controller="Home" asp-action="Quote" class="learn-more">
+                        Proje başlat <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-heading fade-up">
+            <span class="tag">Süreçlerimiz</span>
+            <h2>Şeffaf ve izlenebilir üretim adımları</h2>
+            <p>
+                Her projede kalite beklentilerini karşılamak için tasarım, üretim ve teslimat adımlarını şeffaf biçimde yönetiyoruz.
+            </p>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step fade-up" data-step="01">
+                <span class="icon-circle"><i class="fas fa-lightbulb"></i></span>
+                <h5>Teknik Analiz</h5>
+                <p>Proje gereksinimlerini dinliyor, malzeme ve tolerans analizini teknik ekibimizle yapıyoruz.</p>
+            </div>
+            <div class="process-step fade-up" data-step="02">
+                <span class="icon-circle"><i class="fas fa-drafting-compass"></i></span>
+                <h5>Tasarım & Prototip</h5>
+                <p>Kalıp tasarımı, numune üretimi ve laboratuvar testleriyle ürünün doğruluğunu garanti altına alıyoruz.</p>
+            </div>
+            <div class="process-step fade-up" data-step="03">
+                <span class="icon-circle"><i class="fas fa-industry"></i></span>
+                <h5>Seri Üretim</h5>
+                <p>ISO standartlarında üretim ve %100 kontrol ile parçalarınızı paketleyerek sevkiyata hazır hale getiriyoruz.</p>
+            </div>
+            <div class="process-step fade-up" data-step="04">
+                <span class="icon-circle"><i class="fas fa-headset"></i></span>
+                <h5>Satış Sonrası Destek</h5>
+                <p>Teknik dokümantasyon, bakım önerileri ve iyileştirme raporlarıyla üretiminizi sürekli destekliyoruz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-0">
+    <div class="container">
+        <div class="surface surface-accent d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+            <div>
+                <span class="tag tag-accent">Birlikte üretelim</span>
+                <h3 class="mt-3 mb-2">Projenizi bize anlatın, aynı gün geri dönelim.</h3>
+                <p class="mb-0 text-soft">
+                    Teknik çizim, numune veya fikir aşamasında olun; uzman mühendis ekibimiz ihtiyaçlarınızı dinlemeye hazır.
+                </p>
+            </div>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+                <a asp-controller="Home" asp-action="Quote" class="btn btn-accent">
+                    <i class="fas fa-rocket"></i> Hızlı Teklif
+                </a>
+                <a asp-controller="Home" asp-action="Contact" class="btn btn-light">
+                    <i class="fas fa-comments"></i> Uzmanla Görüş
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

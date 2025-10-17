@@ -1,0 +1,233 @@
+@{
+    ViewData["Title"] = "UI Test Sayfası";
+}
+
+<div class="container py-5">
+    <h1 class="mb-5">🎨 UI Özellikleri Test Sayfası</h1>
+
+    <!-- Toast Notifications Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">1. Toast Bildirimleri</h2>
+        <div class="btn-group" role="group">
+            <button class="btn btn-success" onclick="window.Toast.success('İşlem başarılı!')">
+                <i class="fas fa-check me-2"></i>Success
+            </button>
+            <button class="btn btn-danger" onclick="window.Toast.error('Bir hata oluştu!')">
+                <i class="fas fa-times me-2"></i>Error
+            </button>
+            <button class="btn btn-warning" onclick="window.Toast.warning('Dikkat gerekli!')">
+                <i class="fas fa-exclamation me-2"></i>Warning
+            </button>
+            <button class="btn btn-info" onclick="window.Toast.info('Bilgilendirme mesajı')">
+                <i class="fas fa-info me-2"></i>Info
+            </button>
+        </div>
+    </section>
+
+    <!-- Loading Overlay Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">2. Loading Overlay</h2>
+        <button class="btn btn-primary" onclick="testLoading()">
+            <i class="fas fa-spinner me-2"></i>Loading Test (3 saniye)
+        </button>
+        <script>
+            function testLoading() {
+                window.Loading.show('Veriler yükleniyor...');
+                setTimeout(() => {
+                    window.Loading.hide();
+                    window.Toast.success('Yükleme tamamlandı!');
+                }, 3000);
+            }
+        </script>
+    </section>
+
+    <!-- Lightbox Gallery Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">3. Lightbox Galeri</h2>
+        <div class="row g-3">
+            <div class="col-md-3">
+                <a href="https://picsum.photos/1200/800?random=1"
+                   data-lightbox="test-gallery"
+                   data-caption="Örnek Görsel 1 - Büyük boyutlu görsel">
+                    <img src="https://picsum.photos/300/200?random=1"
+                         class="img-fluid rounded shadow-sm"
+                         alt="Test 1">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://picsum.photos/1200/800?random=2"
+                   data-lightbox="test-gallery"
+                   data-caption="Örnek Görsel 2 - Zoom yapabilirsiniz">
+                    <img src="https://picsum.photos/300/200?random=2"
+                         class="img-fluid rounded shadow-sm"
+                         alt="Test 2">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://picsum.photos/1200/800?random=3"
+                   data-lightbox="test-gallery"
+                   data-caption="Örnek Görsel 3 - Klavye ile gezinin">
+                    <img src="https://picsum.photos/300/200?random=3"
+                         class="img-fluid rounded shadow-sm"
+                         alt="Test 3">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://picsum.photos/1200/800?random=4"
+                   data-lightbox="test-gallery"
+                   data-caption="Örnek Görsel 4 - Mouse wheel ile zoom">
+                    <img src="https://picsum.photos/300/200?random=4"
+                         class="img-fluid rounded shadow-sm"
+                         alt="Test 4">
+                </a>
+            </div>
+        </div>
+        <p class="text-muted mt-2">
+            <small>💡 Görsele tıklayın. Klavye: ←/→ gezin, +/- zoom, ESC kapat</small>
+        </p>
+    </section>
+
+    <!-- Scroll Animations Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">4. Scroll Animasyonları</h2>
+        <p class="text-muted">Aşağı scroll yaparak animasyonları görün:</p>
+
+        <div style="height: 100px"></div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="surface p-4 fade-up">
+                    <h3>Fade Up (Mevcut)</h3>
+                    <p>Yukarı kayarak beliren içerik</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="surface p-4" data-animate="slide-left">
+                    <h3>Slide Left</h3>
+                    <p>Soldan kayarak gelen içerik</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="surface p-4" data-animate="slide-right" data-animate-delay="200">
+                    <h3>Slide Right</h3>
+                    <p>Sağdan kayarak gelen (200ms gecikme)</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="surface p-4" data-animate="zoom-in" data-animate-delay="400">
+                    <h3>Zoom In</h3>
+                    <p>Zoom yaparak beliren (400ms gecikme)</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="surface p-4 text-center" data-animate="rotate-in" data-animate-delay="600">
+                    <h3>Rotate In</h3>
+                    <p>Dönerek beliren içerik (600ms gecikme)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Validation Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">5. Form Validation</h2>
+        <form data-enhance class="surface p-4" style="max-width: 500px">
+            <div class="mb-3">
+                <label class="form-label">Email (Gerekli)</label>
+                <input type="email"
+                       class="form-control"
+                       data-validate
+                       required
+                       placeholder="ornek@email.com">
+                <div class="invalid-feedback">Geçerli bir email adresi girin</div>
+                <div class="valid-feedback">Güzel!</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefon (Gerekli)</label>
+                <input type="tel"
+                       class="form-control"
+                       data-validate
+                       required
+                       pattern="[0-9]{10,11}"
+                       placeholder="5xxxxxxxxx">
+                <div class="invalid-feedback">10-11 haneli telefon numarası</div>
+                <div class="valid-feedback">Doğru format!</div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-check me-2"></i>Gönder
+            </button>
+        </form>
+    </section>
+
+    <!-- Skeleton Loading Test -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">6. Skeleton Loading</h2>
+        <button class="btn btn-secondary mb-3" onclick="testSkeleton()">
+            <i class="fas fa-bone me-2"></i>Skeleton Test
+        </button>
+        <div id="skeletonContainer" class="row">
+            <div class="col-md-4">
+                <div class="card" data-skeleton-type="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ürün Başlığı</h5>
+                        <p class="card-text">Ürün açıklaması burada görünür.</p>
+                        <a href="#" class="btn btn-primary">Detay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function testSkeleton() {
+                const container = document.querySelector('[data-skeleton-type="card"]');
+                const originalContent = container.innerHTML;
+
+                window.Loading.skeleton.show(container);
+
+                setTimeout(() => {
+                    window.Loading.skeleton.hide(container, originalContent);
+                    window.Toast.info('İçerik yüklendi!');
+                }, 3000);
+            }
+        </script>
+    </section>
+
+    <!-- Combined Features Demo -->
+    <section class="mb-5">
+        <h2 class="h4 mb-3">7. Kombine Özellik Demo</h2>
+        <button class="btn btn-accent btn-lg" onclick="combinedDemo()">
+            <i class="fas fa-magic me-2"></i>Tüm Özellikleri Test Et
+        </button>
+        <script>
+            function combinedDemo() {
+                // Loading göster
+                window.Loading.show('Demo başlatılıyor...');
+
+                setTimeout(() => {
+                    window.Loading.hide();
+                    window.Toast.success('Loading tamamlandı!');
+
+                    setTimeout(() => {
+                        window.Toast.info('Toast kuyruğu test ediliyor...');
+
+                        setTimeout(() => {
+                            window.Toast.warning('Scroll-to-top butonu görünür mü?');
+
+                            setTimeout(() => {
+                                window.Toast.success('Demo tamamlandı! 🎉');
+                            }, 1500);
+                        }, 1500);
+                    }, 1000);
+                }, 2000);
+            }
+        </script>
+    </section>
+</div>
+
+<!-- Scroll to Top testi için fazladan içerik -->
+<div class="container py-5">
+    <div class="text-center text-muted">
+        <p>↓ Scroll yapın, sağ altta scroll-to-top butonu belirecek ↓</p>
+        <div style="height: 1000px"></div>
+        <p>↑ Scroll-to-top butonu görünür olmalı ↑</p>
+    </div>
+</div>

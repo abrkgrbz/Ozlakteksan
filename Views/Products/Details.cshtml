@@ -1,0 +1,142 @@
+@model OzlasteksanWeb.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section class="py-4">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Products" asp-action="Index">Ürünler</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="pb-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="surface">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-4 mb-4">
+                        <span class="icon-circle icon-lg">
+                            <i class="fas @Model.Icon"></i>
+                        </span>
+                        <div>
+                            <span class="badge-soft">@Model.Category</span>
+                            <h1 class="h3 fw-bold mb-2 mt-2">@Model.Name</h1>
+                            <p class="text-soft mb-0">
+                                Ürün kodu: OZL-@Model.Id.ToString("D3")
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-soft lead">@Model.Description</p>
+
+                    <hr class="my-4" />
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-semibold mb-3">Öne çıkan avantajlar</h5>
+                            <ul class="list-unstyled text-soft mb-0">
+                                <li class="d-flex gap-2 mb-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>Yüksek kalite standartlarında üretim</span>
+                                </li>
+                                <li class="d-flex gap-2 mb-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>İhtiyaca özel malzeme ve sertlik seçenekleri</span>
+                                </li>
+                                <li class="d-flex gap-2 mb-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>ISO 9001 kontrollü seri üretim süreçleri</span>
+                                </li>
+                                <li class="d-flex gap-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>48 saat içinde teknik teklif desteği</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-semibold mb-3">Teknik bilgiler</h5>
+                            <ul class="list-unstyled text-soft mb-0">
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span>Standart tolerans</span>
+                                    <strong>DIN ISO 3302-1 M2</strong>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span>Malzeme seçenekleri</span>
+                                    <strong>NR, NBR, EPDM, Viton, Silikon, PU</strong>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span>Shore sertlik aralığı</span>
+                                    <strong>30 - 90 Shore A</strong>
+                                </li>
+                                <li class="d-flex justify-content-between py-2">
+                                    <span>Üretim süreçleri</span>
+                                    <strong>Pres, enjeksiyon, ekstrüzyon</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="surface surface-accent mt-4">
+                        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                            <div>
+                                <h5 class="fw-semibold mb-1">Özel ölçü & mühendislik desteği</h5>
+                                <p class="text-soft mb-0">
+                                    CAD dosyalarınızı ve teknik çizimlerinizi gönderin, üretim optimizasyonu için öneriler sunalım.
+                                </p>
+                            </div>
+                            <a asp-controller="Home" asp-action="Quote" class="btn btn-accent">
+                                <i class="fas fa-file-signature"></i> Teklif Talep Et
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="surface sticky-top" style="top: 6rem;">
+                    <span class="tag tag-accent mb-3">Yetkili destek</span>
+                    <h4 class="fw-semibold mb-3">Projeniz için doğru ürünü seçmenize yardımcı olalım</h4>
+                    <p class="text-soft">
+                        Teknik ekibimiz ölçü, malzeme ve teslimat konularında sizi yönlendirsin.
+                    </p>
+                    <div class="d-grid gap-3 mt-4">
+                        <a asp-controller="Home" asp-action="Quote" class="btn btn-accent">
+                            <i class="fas fa-rocket"></i> Hızlı Teklif Formu
+                        </a>
+                        <a asp-controller="Home" asp-action="Contact" class="btn btn-light">
+                            <i class="fas fa-comments"></i> Uzmanla Görüş
+                        </a>
+                    </div>
+                    <div class="quote-highlight mt-4">
+                        <h6 class="fw-semibold mb-2">Telefon ile sipariş</h6>
+                        <p class="text-soft mb-3">Hafta içi 08:00 - 18:00 arası bizi arayabilirsiniz.</p>
+                        <a href="tel:+902122434608" class="btn btn-light w-100">
+                            <i class="fas fa-phone"></i> 0212 243 46 08
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <span class="tag">Benzer ürünler</span>
+                    <h3 class="fw-semibold mt-2 mb-0">İlginizi çekebilecek diğer çözümler</h3>
+                </div>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-light">
+                    <i class="fas fa-th-large"></i> Tüm ürünleri görüntüle
+                </a>
+            </div>
+            <p class="text-soft">
+                Farklı uygulamalar için daha fazla seçeneğe ihtiyaç duyuyorsanız ürünler sayfamıza göz atabilirsiniz.
+            </p>
+        </div>
+    </div>
+</section>

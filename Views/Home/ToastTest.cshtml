@@ -1,0 +1,140 @@
+@{
+    ViewData["Title"] = "Toast Test - Basit";
+}
+
+<div class="container py-5">
+    <h1>🍞 Toast Notification Test</h1>
+    <p>Bu sayfa kesinlikle çalışacak basit bir toast sistemi içeriyor.</p>
+
+    <hr class="my-4">
+
+    <h2>1. Inline Toast (Kesinlikle Çalışır)</h2>
+    <div class="btn-group mb-4" role="group">
+        <button class="btn btn-success" onclick="inlineToast('İşlem başarılı!', 'success')">
+            ✅ Success
+        </button>
+        <button class="btn btn-danger" onclick="inlineToast('Hata oluştu!', 'error')">
+            ❌ Error
+        </button>
+        <button class="btn btn-warning" onclick="inlineToast('Dikkat!', 'warning')">
+            ⚠️ Warning
+        </button>
+        <button class="btn btn-info" onclick="inlineToast('Bilgi mesajı', 'info')">
+            ℹ️ Info
+        </button>
+    </div>
+
+    <hr class="my-4">
+
+    <h2>2. Simple Toast Sistemi</h2>
+    <div class="btn-group mb-4" role="group">
+        <button class="btn btn-success" onclick="window.Toast.success('SimpleToast Success!')">
+            Success
+        </button>
+        <button class="btn btn-danger" onclick="window.Toast.error('SimpleToast Error!')">
+            Error
+        </button>
+        <button class="btn btn-warning" onclick="window.Toast.warning('SimpleToast Warning!')">
+            Warning
+        </button>
+        <button class="btn btn-info" onclick="window.Toast.info('SimpleToast Info!')">
+            Info
+        </button>
+    </div>
+
+    <hr class="my-4">
+
+    <h2>3. Test Fonksiyonları</h2>
+    <button class="btn btn-primary btn-lg" onclick="toastTest()">
+        🧪 Tüm Toast Tiplerini Test Et
+    </button>
+
+    <hr class="my-4">
+
+    <h2>4. Console Testleri</h2>
+    <div class="alert alert-info">
+        <h5>Console'u açın (F12) ve şunları deneyin:</h5>
+        <code>toastTest()</code> - Tüm toast tiplerini test eder<br>
+        <code>window.Toast.success('Test')</code> - Success toast<br>
+        <code>inlineToast('Mesaj', 'success')</code> - Inline toast
+    </div>
+</div>
+
+<!-- Inline Toast Container -->
+<div id="inlineToastContainer" style="position: fixed; top: 20px; right: 20px; z-index: 999999;"></div>
+
+<script>
+// En basit toast - kesinlikle çalışacak
+function inlineToast(message, type) {
+    console.log('Inline toast çağrıldı:', message, type);
+
+    const container = document.getElementById('inlineToastContainer');
+    const toast = document.createElement('div');
+
+    // Renkler
+    const colors = {
+        success: '#10b981',
+        error: '#ef4444',
+        warning: '#f59e0b',
+        info: '#3b82f6'
+    };
+
+    const icons = {
+        success: '✅',
+        error: '❌',
+        warning: '⚠️',
+        info: 'ℹ️'
+    };
+
+    toast.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-left: 4px solid ${colors[type] || colors.info};
+        cursor: pointer;
+        transform: translateX(400px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    `;
+
+    toast.innerHTML = `
+        <span style="font-size: 20px;">${icons[type] || icons.info}</span>
+        <span style="color: #333; font-weight: 500;">${message}</span>
+    `;
+
+    toast.onclick = () => toast.remove();
+
+    container.appendChild(toast);
+
+    // Animasyon için biraz bekle
+    setTimeout(() => {
+        toast.style.transform = 'translateX(0)';
+        toast.style.opacity = '1';
+    }, 10);
+
+    // 3 saniye sonra otomatik kaldır
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 300);
+        }
+    }, 3000);
+}
+
+// Sayfa yüklenince test mesajı
+window.addEventListener('load', function() {
+    console.log('✅ Toast test sayfası yüklendi!');
+    console.log('İlk testi yapmak için herhangi bir butona tıklayın.');
+
+    // 1 saniye sonra hoşgeldin mesajı
+    setTimeout(() => {
+        inlineToast('Toast sistemi hazır! Butonları test edebilirsiniz.', 'info');
+    }, 1000);
+});
+</script>
+
