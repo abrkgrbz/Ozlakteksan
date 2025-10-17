@@ -1,17 +1,15 @@
-version: '3.8'
-
 services:
   ozlakteksan-web:
     build:
-      context: .
-      dockerfile: ../Dockerfile
+      context: ..
+      dockerfile: Dockerfile
     container_name: ozlakteksan-web
     ports:
       - "7080:7080"
       - "7081:7081"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_URLS=http://+:7080
     restart: unless-stopped
     networks:
       - ozlakteksan-network

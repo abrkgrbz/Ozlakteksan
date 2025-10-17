@@ -21,14 +21,14 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
 # Expose port
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 7080
+EXPOSE 7081
 
 # Copy published application
 COPY --from=publish /app/publish .
 
 # Set environment variables
-ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:7080
 ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Start the application
