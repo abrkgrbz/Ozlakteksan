@@ -3,6 +3,10 @@
     ViewData["Title"] = Model.Name;
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/product-gallery.css" />
+}
+
 <section class="py-4">
     <div class="container">
         <nav aria-label="breadcrumb" class="mb-3">
@@ -19,6 +23,9 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-8">
+                <!-- Product Image Gallery -->
+                <div id="productGallery" data-images='@Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Images))' class="mb-4"></div>
+
                 <div class="surface">
                     <div class="d-flex flex-column flex-md-row align-items-md-center gap-4 mb-4">
                         <span class="icon-circle icon-lg">
@@ -140,3 +147,7 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script src="~/js/product-gallery.js"></script>
+}

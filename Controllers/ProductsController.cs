@@ -26,8 +26,29 @@ namespace OzlasteksanWeb.Controllers
         {
             return new List<Product>
             {
-                new Product { Id = 1, Name = "O-ring Conta", Category = "Conta", Description = "Endüstriyel sızdırmazlık uygulamaları için yüksek dayanımlı O-ring contalar. Farklı ölçü ve elastomer seçenekleri mevcuttur.", Icon = "fa-circle" },
-                new Product { Id = 2, Name = "Kauçuk Levhalar", Category = "Levha", Description = "SBR, NBR, EPDM, neopren ve silikon levhalar. 1 mm - 50 mm kalınlık aralığında plaka kesim desteği.", Icon = "fa-layer-group" },
+                new Product {
+                    Id = 1,
+                    Name = "O-ring Conta",
+                    Category = "Conta",
+                    Description = "Endüstriyel sızdırmazlık uygulamaları için yüksek dayanımlı O-ring contalar. Farklı ölçü ve elastomer seçenekleri mevcuttur.",
+                    Icon = "fa-circle",
+                    Images = new List<string> {
+                        "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800",
+                        "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800",
+                        "https://images.unsplash.com/photo-1581092787765-e3c7c7c6d7e6?w=800"
+                    }
+                },
+                new Product {
+                    Id = 2,
+                    Name = "Kauçuk Levhalar",
+                    Category = "Levha",
+                    Description = "SBR, NBR, EPDM, neopren ve silikon levhalar. 1 mm - 50 mm kalınlık aralığında plaka kesim desteği.",
+                    Icon = "fa-layer-group",
+                    Images = new List<string> {
+                        "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800",
+                        "https://images.unsplash.com/photo-1581091226825-c6a89e7e4801?w=800"
+                    }
+                },
                 new Product { Id = 3, Name = "Kaplin Lastikleri", Category = "Kaplin", Description = "Yıldız, fışkı ve papatya tip kaplin lastikleri. Titreşim sönümleme ve yüksek tork aktarımı sağlar.", Icon = "fa-cog" },
                 new Product { Id = 4, Name = "Kauçuk Takozlar", Category = "Takoz", Description = "Silindir, konik ve özel formda takozlar. Makine ve teçhizat montajlarında vibrasyon kontrolü sunar.", Icon = "fa-cube" },
                 new Product { Id = 5, Name = "Kauçuk Körükler", Category = "Körük", Description = "Özel ölçülerde esnek körük sistemleri. Hareket ve genleşme kompanzasyonu için üretilir.", Icon = "fa-expand-arrows-alt" },
